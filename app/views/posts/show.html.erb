@@ -5,4 +5,5 @@
   <%= simple_format(@post.content) %>
 </div>
 
+<%= link_to "Edit", post_edit_path(@post) %> <!-- post_edit_path is a method; pass it @post to get/pass post ID to edit. --> 
 <%= link_to "Posts Index", posts_path %>

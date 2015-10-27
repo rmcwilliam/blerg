@@ -1,9 +1,9 @@
 <h1>New Post</h1>
 
-<%= form_tag(posts_path) do %>
+<%= form_tag(posts_path) do %>   <!-- posts path to posts controller create method -->
     <div class="post-field">
-      <%= label_tag "Title: " %>
-      <%= text_field_tag :title %>
+      <%= label_tag "Title: " %>    
+      <%= text_field_tag :title %>   <!-- creates a text field that will be stored in the posts table under title -->
     </div>
 
     <div class="post-field">
@@ -14,4 +14,4 @@
     <%= submit_tag "Publish!" %>
 <% end %>
 
-<%= link_to "Neverdamnmind", :back %>
+<%= link_to "Neverdamnmind", :back %>  <!-- takes you back to the add a new post! page -->
