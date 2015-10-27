@@ -12,12 +12,26 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.page(params[:page]).per(10)
-    render :index
+    render :index  #  index is erb file with contents that will be displayed 
   end
 
   def show
     @post = Post.find(params[:id])
-    render :show
+    render :show    # show is erb file with contents that wil be displayed 
   end
+
+  def edit 
+    @post = Post.find(params[:id])
+    render :edit  
+  end
+
+  def update
+    post = Post.find(params[:id])
+    post.update(title: params[:title], content: params[:content])
+    redirect_to post_path(post)
+  end
+
 end
+
+
 
