@@ -1,0 +1,18 @@
+<%= form_for(zone) do |f|%>
+	<p>
+	  <b>Zone name</b>
+	<br>   <!-- line break -->
+	<div class="post-field">
+ 	  <%= f.label_tag "Title:" %>    
+      <%= f.text_field_tag :title %>  
+    </div>
+
+    <div class="post-field">
+      <%= f.label_tag "Body: " %>
+      <%= f.text_area_tag :content %>
+    </div>
+
+    <div>
+      <%= f.submit %>  <!-- submit helper will return "create zone" for new action and "update zone" for edit aciton -->
+    </div>
+<% end %>
