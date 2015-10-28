@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  
   def new
     @post.new
     render :new
