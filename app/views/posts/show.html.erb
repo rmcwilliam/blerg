@@ -7,3 +7,26 @@
 
 <%= link_to "Edit", post_edit_path(@post) %> <!-- post_edit_path is a method; pass it @post to get/pass post ID to edit. --> 
 <%= link_to "Posts Index", posts_path %>
+<%= link_to "Nuke this Post", post_path(@post), method: :delete %>
+
+<div class="comment-form">
+    <h3>Add a Comment</h3>
+    <%= form_tag(comments_path(@post)) do %>
+        <div class="comment-field">
+          <%= label_tag "Comment: " %>
+          <%= text_area_tag :comment, nil, cols: 40, rows: 5 %>
+        </div>
+
+        <%= submit_tag "LET YOUR VOICE BE HEARD! YOU SO NEED TO BE HEARD!" %>
+    <% end %>
+</div>
+
+<h2>Insightful Comments</h2>
+<div class="comments">
+    <% @post.comments.each do |comment| %>
+        <div class="comment">
+            <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
+            <%= simple_format(comment.content) %>
+        </div>
+    <% end %>
+</div>	
