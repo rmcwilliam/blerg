@@ -3,6 +3,11 @@
 	  <%= text_field_tag :title, @post.title %>  
     </div>
 
+    <div class="post-field">
+      <%= label_tag "Tags: " %>
+      <%= text_field_tag :tags, @post.tag_names %>
+    </div>
+
 	<div class="post-field">
 	  <%= label_tag "Body: " %>
 	  <%= text_area_tag :content, @post.content %>
