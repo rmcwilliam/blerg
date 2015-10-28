@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   post "posts", to: "posts#create"
   get "posts/:id", to: "posts#show", as: "post"
   put "posts/:id", to: "posts#update" # have to specify the verb when using this route because you have two of the same routes (see edit.erb) 
+  delete "posts/:id", to: "posts#destroy"
+  post "posts/:id/comments", to: "comments#create", as: "comments"
+
+  get "tag/:name", to: "tags#tagged", as: "tagged"
+
+
 
   # Example of named route that can be invoked with purchase_url(id: product.id)
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
