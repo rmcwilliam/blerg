@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+
   def new
     @post.new
     render :new
@@ -31,6 +31,18 @@ class PostsController < ApplicationController
     post = Post.find(params[:id])
     post.update(title: params[:title], content: params[:content])
     redirect_to post_path(post)
+  end
+
+  def delete 
+    post = Post.find(params[:id])
+    post.destroy
+    redirect_to posts_path
+  end
+
+  def tagged
+    @tag = Tag.find_by(name: params[:name])
+    @posts = @tag.posts
+    render :tagged
   end
 
 end
