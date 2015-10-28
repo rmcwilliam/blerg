@@ -1,16 +1,6 @@
-<%= form_tag(post_path(@post), method: :put) do %>   <!-- tell it what verb to use if you two routes that are the same -->
-    <div class="post-field">
- 	 <%= label_tag "Title:" %>    
-      <%= text_field_tag :title, @post.title %>  
-    </div>
+<h1>Edit Post</h1>
 
-    <div class="post-field">
-      <%= label_tag "Body: " %>
-      <%= text_area_tag :content, @post.content %>
-    </div>
-
-    <%= submit_tag "Publish!" %>  <!-- submit tag does whatever I have specified in the form tag above -->
-<% end %>
-
-
+<%= form_tag(post_path(@post), method: :put) do %> <!-- tell it what verb to use if you two routes that are the same -->
+    <%= render partial: "form" %>
+ <% end %>	
 
