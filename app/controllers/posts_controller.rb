@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
 
   def new
-    @post.new
+    @post = Post.new  # had to add in order for form to work with new.html.erb (look at the form and edit)
     render :new
   end
 
