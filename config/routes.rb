@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   delete "posts/:id", to: "posts#destroy"
   post "posts/:id/comments", to: "comments#create", as: "comments"
 
-  get "tag/:name", to: "tags#tagged", as: "tagged"
+  get "tag/:name", to: "tags#tagged"
 
 
 
