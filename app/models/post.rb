@@ -4,7 +4,7 @@ class Post < ActiveRecord::Base
   has_many :tags, through: :post_tags
 
 
-  def tag_names
+  def tag_names   # this creates a virtual attribute?
     self.tags.map(&:name).join(", ")
   end
 
