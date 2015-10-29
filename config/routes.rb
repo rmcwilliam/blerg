@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   get "signup", to: "registration#new"
   post "signup", to: "registration#create"
 
+  # Session Routes
+  get "login", to: "sessions#new"
+  post "login", to: "sessions#create"
+  delete "login", to: "sessions#destroy"
+
   get "posts", to: "posts#index"
   get "posts/new", to: "posts#new"
   get "posts/:id/edit", to: "posts#edit", as: "post_edit" 
