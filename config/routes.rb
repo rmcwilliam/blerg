@@ -10,6 +10,10 @@ Rails.application.routes.draw do
 
   get "hello/:name" => "example#hello"
 
+  # Registration Routes
+  get "signup", to: "registration#new"
+  post "signup", to: "registration#create"
+
   get "posts", to: "posts#index"
   get "posts/new", to: "posts#new"
   get "posts/:id/edit", to: "posts#edit", as: "post_edit" 
