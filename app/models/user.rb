@@ -1,8 +1,8 @@
 class User < ActiveRecord::Base
+  has_secure_password
+
   has_many :posts
 
-
-  validates_length_of :password, minimum: 7
   validates_uniqueness_of :email
-  validates_presence_of :email, :password
+  validates_presence_of :email
 end
