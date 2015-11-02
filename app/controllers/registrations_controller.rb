@@ -6,8 +6,7 @@ class RegistrationsController < ApplicationController
   end
 
   def create
-    @user = User.new(full_name: params[:name] 
-                     email: params[:email],
+    @user = User.new(full_name: params[:name], email: params[:email],
                      password: params[:password])
     if @user.save
       redirect_to posts_path
