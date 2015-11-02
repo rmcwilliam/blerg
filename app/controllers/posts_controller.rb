@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
 
   def new
     @post = Post.new  # had to add in order for form to work with new.html.erb (look at the form and edit)
