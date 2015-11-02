@@ -11,8 +11,8 @@ Rails.application.routes.draw do
   get "hello/:name" => "example#hello"
 
   # Registration Routes
-  get "signup", to: "registration#new"
-  post "signup", to: "registration#create"
+  get "signup", to: "registrations#new"
+  post "signup", to: "registrations#create"
 
   # Session Routes
   get "login", to: "sessions#new"
